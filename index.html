@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">import React from "react";</p>
+<p class="p1">import { motion } from "framer-motion";</p>
+<p class="p1">import { ArrowRight, CheckCircle2, Phone, Mail, MapPin, Sparkles, ShieldCheck, Bolt, LineChart } from "lucide-react";</p>
+<p class="p1">import { Button } from "@/components/ui/button";</p>
+<p class="p1">import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";</p>
+<p class="p2"><br></p>
+<p class="p1">// Embedded logo (your uploaded image), so this preview just works.</p>
+<p class="p1">// If you ever want to swap it, replace the string below with a different data URL</p>
+<p class="p1">// or use an &lt;img src="/logo.png" /&gt; pointing at a public path.</p>
+<p class="p1">const logoDataUrl = "data:image/jpeg;base64,/9j/4Q/+RXhpZgAATU0AKgAAAAgABgESAAMAAAAB...UUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAH/9k=";</p>
+<p class="p2"><br></p>
+<p class="p1">const nav = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ label: "Home", href: "#home" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ label: "Services", href: "#services" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ label: "Projects", href: "#projects" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ label: "About", href: "#about" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ label: "Contact", href: "#contact" },</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">const services = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>icon: &lt;Bolt className="size-6" /&gt;,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>title: "Power Trading &amp; Scheduling",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text: "Day‑ahead, IDM &amp; bilateral market strategies optimized for risk &amp; margin.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>icon: &lt;LineChart className="size-6" /&gt;,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>title: "Analytics &amp; Forecasting",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text: "Load, price &amp; renewable forecasting with transparent KPIs and reporting.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>icon: &lt;ShieldCheck className="size-6" /&gt;,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>title: "Risk &amp; Compliance",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text: "Policy, governance and operational controls aligned to regional market rules.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">const projects = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>title: "Non‑B2B Trading Model",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>tag: "SAPP Markets",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>bullets: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Dynamic margin thresholds",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Energy banking &amp; portfolio balancing",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"87% improvement vs B2B baseline"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>title: "Grid Optimization",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>tag: "Utility Support",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>bullets: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Congestion‑aware dispatch",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Loss minimization &amp; outage planning",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Granular performance dashboards",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">const Feature = ({ icon, title, text }) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;Card className="rounded-2xl shadow-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;CardHeader&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;CardTitle className="flex items-center gap-3 text-teal-800"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span className="p-2 rounded-xl bg-teal-50"&gt;{icon}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{title}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/CardTitle&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/CardHeader&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;CardContent className="text-slate-600"&gt;{text}&lt;/CardContent&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/Card&gt;</p>
+<p class="p1">);</p>
+<p class="p2"><br></p>
+<p class="p1">export default function GridLogicAfrica() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div className="min-h-screen bg-gradient-to-b from-white via-teal-50 to-white text-slate-800"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{/* Header */}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;header className="sticky top-0 z-40 backdrop-blur bg-white/70 border-b"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src={logoDataUrl} alt="GridLogic Africa" className="h-9 w-auto rounded" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span className="font-semibold tracking-wide text-teal-900"&gt;GRIDLOGIC AFRICA&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;nav className="hidden md:flex items-center gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{nav.map((n) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;a key={n.href} href={n.href} className="text-slate-600 hover:text-teal-700 transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{n.label}</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="#contact" className="md:inline-block hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;Button className="rounded-2xl bg-orange-500 hover:bg-orange-600"&gt;Talk to us&lt;/Button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>{/* Hero */}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;section id="home" className="relative overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="mx-auto max-w-7xl px-4 py-16 grid lg:grid-cols-2 gap-10 items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="inline-flex items-center gap-2 text-teal-700 bg-teal-50 rounded-full px-3 py-1 w-fit mb-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;Sparkles className="size-4" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span className="text-sm"&gt;Reliable · Data‑driven · African&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1 className="text-4xl md:text-5xl font-bold leading-tight text-slate-900"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Smarter Power for a Growing Africa</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p className="mt-4 text-lg text-slate-600 max-w-prose"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>GridLogic Africa designs, trades and optimizes energy portfolios across SAPP markets. We marry analytics with practical operations to deliver resilient, profitable supply.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="mt-6 flex gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;a href="#services"&gt;&lt;Button className="rounded-2xl bg-teal-700 hover:bg-teal-800"&gt;Our Services&lt;/Button&gt;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;a href="#projects"&gt;&lt;Button variant="outline" className="rounded-2xl border-teal-200 text-teal-800 hover:bg-teal-50"&gt;Case Studies &lt;ArrowRight className="ml-2 size-4"/&gt;&lt;/Button&gt;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/motion.div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7 }} className="relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="aspect-[4/3] rounded-3xl bg-gradient-to-br from-teal-600 via-teal-500 to-orange-400 p-[2px] shadow-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="h-full w-full rounded-3xl bg-white grid place-items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;img src={logoDataUrl} alt="GridLogic Africa logo large" className="h-40 w-auto opacity-90" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p className="mt-3 text-slate-500 text-sm"&gt;Teal &amp; Orange – our promise of clean reliability + energetic growth&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/motion.div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>{/* Services */}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;section id="services" className="mx-auto max-w-7xl px-4 py-14"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="grid md:grid-cols-[1.2fr,2fr] gap-10 items-start"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 className="text-3xl font-bold text-slate-900"&gt;What we do&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p className="mt-3 text-slate-600"&gt;End‑to‑end support from market access and scheduling to analytics and risk governance.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul className="mt-6 space-y-2 text-slate-700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>{["SAPP DAM, IDM, FPM‑W &amp; FPM‑M participation", "Energy banking &amp; bilateral integration", "Forecasting, backtesting &amp; PnL attribution"].map((t) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li key={t} className="flex items-center gap-2"&gt;&lt;CheckCircle2 className="size-5 text-teal-600"/&gt; {t}&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="grid sm:grid-cols-2 gap-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{services.map((s) =&gt; &lt;Feature key={s.title} {...s} /&gt;)}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>{/* Projects */}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;section id="projects" className="mx-auto max-w-7xl px-4 py-14"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 className="text-3xl font-bold text-slate-900 mb-6"&gt;Selected projects&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="grid md:grid-cols-2 gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{projects.map((p) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;Card key={p.title} className="rounded-2xl overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;CardHeader className="bg-gradient-to-r from-teal-600 to-orange-500 text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;CardTitle className="flex items-center justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;span&gt;{p.title}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;span className="text-xs bg-white/20 rounded-full px-2 py-0.5"&gt;{p.tag}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/CardTitle&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/CardHeader&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;CardContent className="pt-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul className="space-y-2 text-slate-700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>{p.bullets.map((b) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li key={b} className="flex gap-2 items-start"&gt;&lt;CheckCircle2 className="mt-0.5 size-4 text-teal-600"/&gt; {b}&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/CardContent&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/Card&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>{/* About */}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;section id="about" className="mx-auto max-w-7xl px-4 py-14"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="grid lg:grid-cols-3 gap-8 items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="lg:col-span-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 className="text-3xl font-bold text-slate-900"&gt;About GridLogic Africa&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p className="mt-3 text-slate-600 max-w-3xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>We are an African energy solutions firm focused on reliable electricity supply through intelligent trading, operations and analytics. Our team blends utility‑side experience with private‑sector agility to deliver dependable megawatts where they matter most.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="rounded-3xl p-6 bg-orange-50 border border-orange-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;ShieldCheck className="text-orange-500"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;p className="font-medium text-orange-900"&gt;Our values&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul className="mt-3 space-y-2 text-orange-900/80 text-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Transparency in pricing &amp; risk&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Operational excellence &amp; safety&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Impact for African communities&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>{/* Contact */}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;section id="contact" className="mx-auto max-w-7xl px-4 py-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="grid md:grid-cols-3 gap-6 items-stretch"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;Card className="md:col-span-2 rounded-2xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;CardHeader&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;CardTitle&gt;Let’s power something great&lt;/CardTitle&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/CardHeader&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;CardContent&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;p className="text-slate-600 mb-4"&gt;Tell us about your project—demand profile, timelines, markets—and we’ll propose the best path to reliable, affordable power.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="flex flex-wrap gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="mailto:info@gridlogic.africa"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;Button className="rounded-2xl bg-teal-700 hover:bg-teal-800"&gt;&lt;Mail className="mr-2 size-4"/&gt; info@gridlogic.africa&lt;/Button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="tel:+26000000000"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;Button variant="outline" className="rounded-2xl border-teal-200 text-teal-800 hover:bg-teal-50"&gt;&lt;Phone className="mr-2 size-4"/&gt; +260 000 000 000&lt;/Button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/CardContent&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/Card&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;Card className="rounded-2xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;CardHeader&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;CardTitle&gt;Where we operate&lt;/CardTitle&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/CardHeader&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;CardContent className="text-slate-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="flex items-start gap-2"&gt;&lt;MapPin className="mt-1 size-4 text-teal-600"/&gt; Southern African Power Pool (SAPP)&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="flex items-start gap-2 mt-2"&gt;&lt;MapPin className="mt-1 size-4 text-teal-600"/&gt; Active in DAM, IDM, FPM‑W, FPM‑M&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/CardContent&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/Card&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>{/* Footer */}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;footer className="bg-slate-950 text-slate-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="mx-auto max-w-7xl px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src={logoDataUrl} alt="GLA" className="h-7 w-auto rounded" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span className="text-sm"&gt;© {new Date().getFullYear()} GridLogic Africa Limited&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="text-xs"&gt;Teal &lt;span className="inline-block w-3 h-3 bg-teal-600 rounded-full align-middle"/&gt; &amp;nbsp; Orange &lt;span className="inline-block w-3 h-3 bg-orange-500 rounded-full align-middle"/&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>);</p>
+<p class="p1">}</p>
+</body>
+</html>
